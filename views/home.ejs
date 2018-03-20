@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+  body {margin:0px;}
+  .title {color: black; font-size: 40px; padding-top: 90px; margin-top: 0px;}
+  #footMessage{color: white; font-size: 20px; width: 100%;margin-left: auto; margin-right: auto;}
+  #int { box-shadow: 0px 5px 20px #888888; width: 100%; padding-bottom: 20px;}
+  #intro {height : 600px ; background-image: url('https://i.pinimg.com/564x/7a/d4/84/7ad484f2aab95645f0e509778f056dfa.jpg'); background-repeat: no-repeat;background-position: center;}
+  #proj{min-height : 900px ; background-color: white; }
+  #about {height : 1100px ; background-color: #EAECEF; border: 2px solid #D9DCDF;}
+ #foot {background-color: #262525; height: 120px; width:100%;}
+  h1 {font-family: 'Roboto', sans-serif; font-size: 60px; text-align: center; font-weight: 900px; color : #414a4f;}
+  h2 {font-family: 'Roboto', sans-serif; font-size: 30px; text-align: center; font-weight: 900px; color : #414a4f;}
+  h3 {font-family: 'Roboto', sans-serif; font-size: 30px;  font-weight: 1000px; color : #C64033; width: 1000px; margin: auto; margin-bottom: 20px; }
+  footer {background-color: #FB5747; height: 220px;}
+  #pAbout {width: 1100px; margin: auto; font-size: 25px; color: #636366; text-align: center; margin-bottom: 40px;}
+  #pProj {width: 1000px; margin: auto; font-size: 25px; color: #636366;  margin-bottom: 40px;}
+  #aImage {
+    border-radius: 50%;
+    border: 8px solid #D9DCDF;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    margin-bottom: 25px;
+}
+#skills {
+  height: 300px;
+  width: 1100px;
+  margin: auto;
+  margin-top: 50px;
+}
+ .skills {
+   display: block;
+   float : left;
+   margin: 20px;
+ }
+ .skills img{
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 80px;
+ }
+ .skills p{
+   text-align: center;
+   width: 320px;
+ }
+ .proj {
+   width: 1100px;
+   margin: auto;
+   margin-bottom: 20px;
+ }
+ .projInner {
+   display: none;
+   margin-bottom: 40px
+
+ }
+ .footer{
+   font-size: 40px; padding-top: 90px; margin-top: 0px;
+   color : white;
+ }
+  </style>
+
+
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
+ <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+    console.log("clicked")
+      $("h3").click(function(){
+          $(this).next().toggle("fast");
+          if($(this).children(0)["0"].attributes["0"].nodeValue == 'images/up-arrow.svg')
+          {
+            $(this).children(0)["0"].attributes["0"].nodeValue = 'images/angle-arrow-down.svg'
+          }
+          else {
+            $(this).children(0)["0"].attributes["0"].nodeValue = 'images/up-arrow.svg'
+          }
+
+      });
+  });
+
+
+
+
+var i = 0;
+var x = 0;
+var speed = 100;
+var array = ["web applications.", "user interfaces.", "IOS applications."];
+
+function typeWriter() {
+  if (i < array[x].length) {
+
+    document.getElementById("demo").innerHTML += array[x].charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+  else{
+    if (x == array.length - 1)
+    {
+
+
+
+      setTimeout(function() {
+        document.getElementById("demo").innerHTML = "";
+        x = 0;
+        i = 0;
+        typeWriter();
+
+      }, 2000);
+
+      console.log("here2");
+    }
+    else {
+      setTimeout(function() {
+        document.getElementById("demo").innerHTML = "";
+        x++;
+        i = 0;
+        typeWriter();
+
+      }, 2000);
+
+      console.log("here");
+    }
+  }
+
+
+}
+
+setTimeout(typeWriter, speed);
+
+var slideIndex = [1,1,1];
+var slideId = ["mySlides1", "mySlides2", "mySlides3"]
+showDivs(1, 0);
+showDivs(1, 1);
+showDivs(1, 2);
+
+function plusDivs(n, no) {
+  showDivs(slideIndex[no] += n, no);
+}
+
+function showDivs(n, no) {
+  var i;
+  var x = document.getElementsByClassName(slideId[no]);
+  if (n > x.length) {slideIndex[no] = 1}
+  if (n < 1) {slideIndex[no] = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  x[slideIndex[no]-1].style.display = "block";
+}
+
+
+</script>
+
+
+</head>
+<body>
+<div id = "int">
+<div id = "intro">
+  <img src ="images/blackGirls.png"  height="200" width="200" style = "margin-left : 120px;">
+</div>
+<h1> Hello, I'm Ari. I design & build </h1>
+<h1 id = "demo"> </h1>
+</div>
+<div id = "about">
+<h1 class = "title" > About Me </h1>
+<img id = "aImage" src = "images/IMG_8297.jpeg" height="200" width="200" >
+<p id = "pAbout"> Hello, My names Ari Umenyiora. Im a recent graduate of the Rutgers Universoty Computer and Electrical Engineering program.
+I have a vast experience with programing from machine level coding to highlevel languges. I started off working with C++ and Java
+but found a true passion developing applications and now mainly work with Swift for IOS and Javascript for web developement. I've
+with all aspects of the software developement lifesycle and in an agile work flow. I Look forward to   </p>
+<div id = "skills">
+<div class =  "skills" > <img src = "images/wedding-planning.svg" height="80" width="80"><h2> Strategy </h1> <p> I'm experienced in the software developement life cycle and comfortable collaborating with others on a project. I like the methodical approach of software design, usually in the form of agile scrum. I like clean readable code and take pride in my work.</p></div>
+<div class =  "skills" > <img src = "images/paint-brush.svg" height="80" width="80"> <h2> UI/UX </h1><p>I design interfaces in photoshop focusing on content structure, intuitive UI patterns and simple interactions. I like clean minimal designs. </p></div>
+<div class =  "skills" > <img src = "images/code.svg" height="80" width="80"> <h2> Languages </h1><p>Languages - C++(4 years), Java(3 years), SQL(2 year), Swift(3 years),Javascript/ Node.JS/ AngularJS/JQuery/(1yr) </p> <p> Concepts – SQL and noSql Database, Parallel Programing, Object Oriented Programming, Software Development life cycle, UI/UX design, Advanced algorithms   </p></div>
+</div>
+</div>
+<div id = "proj">
+<h1 class = "title" > Projects </h1>
+<p id = "pAbout"> A few of my projects dealing with different frameworks. </p>
+ <h3 style="cursor: pointer;"> TopPop <img src = "images/up-arrow.svg" height="20" width="20" style ="float : right"></h3>
+<div class = "projInner">
+  <p id = "pProj"> TopPop is my most recent project and its still in its infancy. The goal of TopPop is to accumulate up-to-date information on music artists and present them in user friendly manner. Currently TopPop can uses several API's such as Twitter, Instagram, Youtube, Spotify etc to present the most recent data on your favorite artists. Some of the data retrieved will then be analyzed through a form of AI called Natural Language Processing to determine the publics sentiment on that artists. All the data on TopPop is dynamically generated and grows the more people use it. It is built with the current technologies in MEAN stack, allowing me to write both the server and client side in JavaScript. TopPop when completed could be invaluable for companies who are looking for the most popular Artists to market their products.  </p>
+  <div class="w3-content w3-display-container">
+  <img class="mySlides1" src="images/Snip20180319_2.png" style="width:100% ">
+  <img class="mySlides1" src="images/Snip20180319_6.png" style="width:100% ; display : none">
+  <img class="mySlides1" src="images/Snip20180319_7.png" style="width:100% ; display : none">
+  <img class="mySlides1" src="images/Snip20180319_8.png" style="width:100% ; display : none">
+  <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1, 0)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1, 0)">&#10095;</button>
+</div>
+</div>
+ <h3 style="cursor: pointer;"> LeCut  <img src = "images/up-arrow.svg" height="20" width="20" style ="float : right"></h3>
+ <div class = "projInner">
+   <p id = "pProj"> LeCut is a simple Wordpress based shop. The goal at the time was to make an ecommerce site that could be maintained by someone with no knowledge of programming. To do this I built the application off of Wordpress and the framework of one of its Woocommerce themes. I added alot of my own custom HTML/CSS and php to get my desired result. </p>
+   <div class="w3-content w3-display-container">
+   <img class="mySlides2" src="images/Snip20180319_9.png" style="width:100% ">
+   <img class="mySlides2" src="images/Snip20180319_10.png" style="width:100% ; display : none">
+   <img class="mySlides2" src="images/Snip20180319_12.png" style="width:100% ; display : none">
+   <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1, 1)">&#10094;</button>
+  <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1, 1)">&#10095;</button>
+ </div>
+ </div>
+<h3 style="cursor: pointer;"> Indoor Positioning <img src = "images/up-arrow.svg" height="20" width="20" style ="float : right"></h3>
+<div class = "projInner">
+  <p id = "pProj"> This application was my senior design project. The goal was to design a method of tracking people indoors similar to how Google Maps can track your location outdoors. To achieve this we(me and 3 group members) had to figure out a way to determine a persons location indoors. We arrived at the solution of sending out signals from multiple Bluetooth beacons in a room and reading the strength of those signals with an iPhone. By mapping those signal strengths to locations in the building we could approximate the users location within marginal error. </p>
+  <div class="w3-content w3-display-container">
+  <img class="mySlides3" src="images/Snip20180320_13.png" style="width:100% ">
+  <img class="mySlides3" src="images/Snip20180320_14.png" style="width:100% ; display : none">
+  <img class="mySlides3" src="images/Snip20180320_16.png" style="width:100% ; display : none">
+ <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1, 2)">&#10094;</button>
+ <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1, 2)">&#10095;</button>
+</div>
+</div>
+</div>
+
+
+<footer>
+  <h1 class = "footer"> Thank You for visiting my site! </h3>
+
+</footer>
+<div id = "foot"> <small id = "footMessage">&copy; Copyright and made by Ari Umenyiora 2018</small> </div>
+</body>
+
+
+</html>
